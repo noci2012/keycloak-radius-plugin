@@ -5,7 +5,7 @@
     <groupId>com.github.vzakharchenko</groupId>
     <artifactId>keycloak-plugins</artifactId>
     <packaging>pom</packaging>
-    <version>1.4.9-SNAPSHOT</version>
+    <version>1.4.11-SNAPSHOT</version>
 
     <name>Keycloak Radius Server</name>
     <description>Extension for keycloak for working as Radius Server</description>
@@ -15,7 +15,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -54,14 +54,14 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <properties-maven-plugin>1.1.0</properties-maven-plugin>
         <maven-compiler-plugin>3.10.1</maven-compiler-plugin>
-        <maven-enforcer-plugin>3.1.0</maven-enforcer-plugin>
-        <spotbugs-maven-plugin>4.7.2.0</spotbugs-maven-plugin>
-        <maven-pmd-plugin>3.17.0</maven-pmd-plugin>
+        <maven-enforcer-plugin>3.2.1</maven-enforcer-plugin>
+        <spotbugs-maven-plugin>4.7.3.0</spotbugs-maven-plugin>
+        <maven-pmd-plugin>3.20.0</maven-pmd-plugin>
         <fast-build>false</fast-build>
 
         <pmdVersion>6.17.0</pmdVersion>
 
-        <keycloak.version>19.0.2</keycloak.version>
+        <keycloak.version>20.0.3</keycloak.version>
         <checkStyleLocation>../analizers</checkStyleLocation>
         <pmdLocation>${basedir}/../analizers/</pmdLocation>
         <findBugsLocation>${basedir}/../analizers/</findBugsLocation>
@@ -150,7 +150,7 @@
         <dependency>
             <groupId>org.jboss.logmanager</groupId>
             <artifactId>jboss-logmanager</artifactId>
-            <version>2.1.18.Final</version>
+            <version>2.1.19.Final</version>
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-servlet-filter-adapter -->
@@ -177,14 +177,14 @@
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.31</version>
+            <version>2.3.32</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>2.0.3</version>
+            <version>2.0.6</version>
             <scope>test</scope>
         </dependency>
 
@@ -192,7 +192,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.6.1</version>
+            <version>7.7.1</version>
             <scope>test</scope>
         </dependency>
 
@@ -200,7 +200,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>4.8.0</version>
+            <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -243,7 +243,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.0</version>
+                <version>3.4.1</version>
                 <configuration>
                     <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
@@ -251,7 +251,7 @@
                                 <Multi-Release>true</Multi-Release>
                             </manifestEntries>
                         </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                     </transformers>
                 </configuration>
                 <executions>
@@ -414,7 +414,7 @@
                     <dependency>
                         <groupId>com.fasterxml.jackson.core</groupId>
                         <artifactId>jackson-databind</artifactId>
-                        <version>2.13.4</version>
+                        <version>2.14.2</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -454,17 +454,16 @@
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
-                        <version>4.7.2</version>
+                        <version>4.7.3</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.2.1</version>
                 <configuration>
                     <configLocation>${checkStyleLocation}/checkstyle.xml</configLocation>
-                    <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <failOnViolation>true</failOnViolation>
@@ -617,7 +616,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>3.0.0-M6</version>
+                <version>3.0.0-M7</version>
                 <configuration>
                     <checkModificationExcludes>
                         <checkModificationExclude>pom.xml</checkModificationExclude>
